@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>bookpayback.about</title>
+<style>
+    @font-face {
+      font-family: 'ddag';
+      src: url('font/ddag\ 복사본.woff') format('woff');}
+      @font-face {
+      font-family: 'cafe';
+      src: url('font/Cafe24Moyamoya-Regular-v1.0\ 복사본.otf') format('opentype');
+      
+    }
+    @font-face {
+      font-family: 'gmarket';
+      src: url('font/GmarketSansTTFMedium\ 복사본.ttf') format('truetype');
+      
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'helvetica';
+      height: 100vh;
+      background: black;
+      overflow: hidden;
+    }
+    .navigate {
+      text-align: center;
+      font-size: 4vw;
+      font-weight: 300;
+      padding: 2vh 0;
+      color: #ffffff;
+    }
+    .navigate2{
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      text-align: center;
+      font-size: 4vw;
+      font-weight: 300;
+      padding: 2vh 43.6vw;
+      color: #ffffff;
+    }
+   /* .menubox-0{
+      position:absolute;
+      top: 17vh;
+      left: 26vw;
+      width:8vw;
+      height: 5vh;
+      border: 2px solid rgb(0, 0, 0) ;
+      border-radius: 28px;
+    }*/
+        .menubox{
+      position:absolute;
+      top: 15vh;
+      left: 40vw;
+      width:8vw;
+      height: 5vh;
+      color: #ffffff;
+      border: 2px solid rgb(255, 255, 255) ;
+      border-radius: 28px;
+    }
+
+    .menubox2{
+      position:absolute;
+      top: 15vh;
+      left: 50vw;
+      width:8vw;
+      height: 5vh;
+      color: #ffffff;
+      border: 2px solid rgb(255, 255, 255) ;
+      border-radius: 28px;
+    }
+    .menubox3{
+
+      position:absolute;
+      top: 15vh;
+      left: 60vw;
+      width:8vw;
+      height: 5vh;
+      color: #ffffff;
+      border: 2px solid rgb(255, 255, 255) ;
+      border-radius: 28px;
+    }
+    .menubox4{
+
+position:absolute;
+top: 15vh;
+left: 30vw;
+width:8vw;
+height: 5vh;
+color: #ffffff;
+border: 2px solid rgb(255, 255, 255) ;
+border-radius: 28px;
+}
+    .topmenu {
+      font-family: Helvetica, sans-serif;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 17vw;
+      height: 100%;
+      font-weight: 100;
+      font-size: 1.8vw;
+      cursor: pointer;
+      color: #ffffff;
+      left: -4.6vw;
+      position: relative;
+      transition: background-color 0.3s;
+      text-decoration: none; 
+      padding-top: 2px;
+
+    }
+
+    .topmenu::after {
+      content: attr(data-ko);
+      position: absolute;
+      color: rgb(255, 255, 255);
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+    }
+
+    .topmenu:hover {
+     color: transparent;
+    }
+
+    .topmenu:hover::after {
+      opacity: 1;
+    }
+    .topmenu-wrapper {
+  position: relative;
+  display: inline-block;
+}
+    .menusub {
+      
+      background-color: rgb(255, 255, 255);
+      display: none;
+      position: absolute;
+      top: 120%;
+      left:0;
+      border: 0.1vw solid rgb(255, 255, 255);
+      border-radius: 28px;
+      flex-direction: column;
+     
+     
+      z-index: 15;
+    }
+    
+    .back-btn {
+      position: absolute;
+      top: 1.7vh;
+      left: 1vw;
+      padding: 1vh 1vw;
+      padding-top: 2vh ;
+      border-bottom: 2vh;
+      font-size: 2vw;
+      text-align: center;
+      border: 1px solid rgb(0, 0, 0);
+      background: rgb(0, 0, 0);
+      color: #ffffff;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 110;
+    }
+    .back-btn:hover {
+      background-color: rgb(255, 255, 255);
+      color: rgb(0, 0, 0);
+    }
+
+    .submenu  {
+      font-family:Arial, Helvetica, sans-serif;
+      font-weight: 100;
+      width: 8vw;
+      height: 3vw;
+      font-size: 1.5vw;
+      display: flex;
+      align-items: center;
+      padding-left: 5px;
+      padding-top: 2px;
+      padding-bottom: 2px;
+      justify-content: center; 
+      padding-top: 10px;
+      transition: background-color 0.3s;
+      color: rgb(0, 0, 0);
+      
+      
+    }
+
+    .submenu:hover {
+      border: 0.1vw solid rgb(0, 0, 0);
+      border-radius: 30px;
+    }
+    a {
+    text-decoration: none;
+    color: inherit;
+    }
+
+    .map{
+        position: absolute;
+        width: 43vw;
+        height: auto;
+    }
+
+    .button{
+        position: absolute;
+        top:90.5vh;
+        left: 15vw;
+        color: rgb(0, 0, 0);
+        font-weight: 200;
+        border-radius: 0.5em;
+        padding: 1vh 2vw;
+        font-family: Helvetica, sans-serif;
+        font-size: 4vw;
+        z-index: 88;
+    }
+    .button2{
+        position: absolute;
+        top: 90.5vh;
+        left: 65vw;
+        color: rgb(0, 0, 0);
+        font-weight: 200;
+        border-radius: 0.5em;
+        padding: 1vh 2vw;
+        font-family: Helvetica, sans-serif;
+        font-size: 4vw;
+        z-index: 88;
+    }
+.button:hover, .button2:hover{
+ font-weight: bolder;
+}
+    .page {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient( to bottom rgba(255,255,0,1), rgba(255,255,255,1), rgba(255,255,0,1) ) ;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+      padding: 5vh 5vw;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+      opacity: 0;
+      pointer-events: none;
+      display: block;
+    }
+    
+    .image-book{
+      position: absolute;
+      left: 0vw;
+      top:23vh;
+      width: 100vw;
+      height: auto;
+
+    }
+    .book-box{
+      position: absolute;
+      width: 35vw;
+      background-color: rgb(255,255,255);
+      font-size: 3.5vh;
+      border: 0.2vh solid black;
+
+    }
+    .book-box:hover{
+        background-color: black;
+        color: #ffffff;
+    }
+
+</style>
+</head> 
+<body>
+<div class="navigate">Review</div>
+  
+<!--<div class="menubox-0">
+   <a href="pj1.html" class="topmenu">HOME</div>-->
+<div class="menubox">
+    <a href ="About.html" class="topmenu"  data-ko="소개">ABOUT</a>
+    </div>
+    <div class="menubox2">
+    <a href="area.html" class="topmenu" data-ko="지역">AREA</a>
+    </div>
+    <div class="menubox3">
+    <div class="topmenu" onclick="showbox('submenu2')" data-ko="기타">OTHERS</div>
+    <div class="menusub" id="submenu2" style="left: calc(0vw * 2);">
+      <a href ="review.html" class="submenu">후기</a>
+      <a href ="recommend.html" class="submenu">도서 추천</a>
+    </div>
+    </div>
+    <div class="menubox4">
+      <a href ="index.html" class="topmenu"  data-ko="홈">HOME</a>
+      </div>
+ 
+
+<div class="button" onclick="showPage('seocho-page')" >보러가기</div>
+<div class="button2" onclick="showPage('ulsan-page')">보러가기</div>
+<img src="rv-sc.png" alt="서초 지도" class="map" id="seocho-map" style="top: 28vh; left: 6vw;">
+<img src="rv-us.png" alt="울산 지도" class="map" id="ulsan-map" style="top: 28vh; left: 55vw;">
+
+
+
+
+<!--서초-->
+<div id="seocho-page" class="page">
+  <button class="back-btn" onclick="hidePages()">↩</button>
+  <div class="navigate2" >Review</div>
+  <img src="rv-book.png" alt="울산 지도" class="image-book" id="seocho-map" >
+  <a href="https://woomii.tistory.com/79" class="book-box" style="top: 55vh; left: 13vw; padding: 2vh 2vw 2vh 2vw;"
+  >[후기] 서초 북페이백 서비스(새책을 빠르게 '3주간' 대여)</a>
+  <a href="https://blog.naver.com/lilmine_luv/223828647206" class="book-box" style="top: 80vh; left: 13vw; padding: 2vh 2vw 2vh 2vw;"
+  > 책 사고 돈 돌려받는 법! 서초맘 북페이백 사용해본 후기</a>
+  <a href="https://blog.naver.com/seocho88/223668532630" class="book-box" style="top: 55vh; left: 53vw; padding: 2vh 2vw 2vh 2vw;"
+  > 읽고 싶은 책이 있다면, '희망도서 신청' 서비스와 '북페이백'을 이용해보세요</a>
+  <a href="https://cafe.naver.com/gangmok/1770907?art=ZXh0ZXJuYWwtc2VydmljZS1uYXZlci1zZWFyY2gtY2FmZS1wcg.eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYWZlVHlwZSI6IkNBRkVfVVJMIiwiY2FmZVVybCI6Imdhbmdtb2siLCJhcnRpY2xlSWQiOjE3NzA5MDcsImlzc3VlZEF0IjoxNzQ4Njc1NDA1NDMyfQ.snNMej9szX_4l93-yvX4xX7XuQzmn8Ysb9LKJM6dVYw" class="book-box" style="top: 80vh; left: 53vw; padding: 2vh 2vw 2vh 2vw;"
+  > 북페이백 이용하면 무료로 책 읽기 가능해요...</a>
+  <div class="menubox">
+    <a href ="About.html" class="topmenu"  data-ko="소개">ABOUT</a>
+    </div>
+    <div class="menubox2">
+    <a href="area.html" class="topmenu" data-ko="지역">AREA</a>
+    </div>
+    <div class="menubox3">
+    <div class="topmenu" onclick="showbox('submenu2')" data-ko="기타">OTHERS</div>
+    <div class="menusub" id="submenu2" style="left: calc(0vw * 2);">
+      <a href ="review.html" class="submenu">후기</a>
+      <a href ="recommend.html" class="submenu">도서 추천</a>
+    </div>
+  </div>
+  <div class="menubox4">
+    <a href ="index.html" class="topmenu"  data-ko="홈">HOME</a>
+    </div>
+</div>
+
+ 
+
+
+
+<script>
+    function showbox(dpname) {
+      const all = document.querySelectorAll(".menusub");
+      all.forEach(m => {
+        if (m.id !== dpname) m.style.display = "none";
+      });
+
+      const box = document.getElementById(dpname);
+      box.style.display = (box.style.display === "block") ? "none" : "block";
+    }
+  </script>
+
+  
+
+
+<script>
+  function showPage(pageId) {
+   
+    const bodyChildren = document.body.children;
+    for (let i = 0; i < bodyChildren.length; i++) {
+      const el = bodyChildren[i];
+      if (!el.classList.contains('page')) {
+        el.style.display = 'none';
+      }
+    }
+
+   
+    const page = document.getElementById(pageId);
+    if (page) {
+      page.style.opacity = '1';
+      page.style.pointerEvents = 'auto';
+    }
+  }
+</script>
+
+<script>
+  function hidePages() {
+    
+    const pages = document.querySelectorAll(".page");
+    pages.forEach(p => {
+      p.style.opacity = '0';
+      p.style.pointerEvents = 'none';
+    });
+
+   
+    const bodyChildren = document.body.children;
+    for (let i = 0; i < bodyChildren.length; i++) {
+      const el = bodyChildren[i];
+      if (!el.classList.contains('page')) {
+        el.style.display = '';
+      }
+    }
+  }
+</script>
+
+<!--울산-->
+<div id="ulsan-page" class="page">
+  <button class="back-btn" onclick="hidePages()">↩</button>
+  <div class="navigate2" >Review</div>
+  <div class="navigate2" >Review</div>
+<img src="rv-book-us.png" alt="울산 지도" class="image-book" id="seocho-map" >
+<a href="https://blog.naver.com/usbukgu/223794570393" class="book-box" style="top: 55vh; left: 13vw; padding: 2vh 2vw 2vh 2vw;"
+>1석3조 울산 책값 돌려주기 이용후기</a>
+<a href="https://blog.naver.com/chickenwing2/223809383402" class="book-box" style="top: 80vh; left: 13vw; padding: 2vh 2vw 2vh 2vw;"
+> 새 책 읽고 도서관에 반납하는 책값 돌려주기 후기(울산 도서관)</a>
+<a href="https://blog.naver.com/seocho88/223668532630" class="book-box" style="top: 55vh; left: 53vw; padding: 2vh 2vw 2vh 2vw;"
+> 울산 도서관 책값 돌려주기 서비스 이용하기(+마감기한)</a>
+<a href="https://blog.naver.com/3m15s/222238139585" class="book-box" style="top: 80vh; left: 53vw; padding: 2vh 2vw 2vh 2vw;"
+> 울산도서관 책값 돌려받기 후기</a>
+<div class="menubox">
+  <a href ="About.html" class="topmenu"  data-ko="소개">ABOUT</a>
+  </div>
+  <div class="menubox2">
+  <a href="area.html" class="topmenu" data-ko="지역">AREA</a>
+  </div>
+  <div class="menubox3">
+  <div class="topmenu" onclick="showbox('submenu2')" data-ko="기타">OTHERS</div>
+  <div class="menusub" id="submenu2" style="left: calc(0vw * 2);">
+    <a href ="review.html" class="submenu">후기</a>
+    <a href ="recommend.html" class="submenu">도서 추천</a>
+  </div>
+  </div>
+  <div class="menubox4">
+    <a href ="index.html" class="topmenu"  data-ko="홈">HOME</a>
+    </div>
+</div>
+</body>
+</html>

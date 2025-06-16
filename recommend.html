@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>bookpayback.about</title>
+<style>
+    @font-face {
+      font-family: 'ddag';
+      src: url('font/ddag\ 복사본.woff') format('woff');}
+      @font-face {
+      font-family: 'cafe';
+      src: url('font/Cafe24Moyamoya-Regular-v1.0\ 복사본.otf') format('opentype');
+      
+    }
+    @font-face {
+        font-family: 'bagle';
+        src: url(font/BagelFatOne-Regular.ttf) format(truetype);
+    }
+    @font-face{
+      font-family: 'gmarket';
+      src: url(font/GmarketSansTTFMedium\ 복사본.ttf) format(truetype);
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'helvetica';
+      height: 100vh;
+      background: black;
+      overflow: hidden;
+    }
+    .navigate {
+      text-align: center;
+      font-size: 4vw;
+      font-weight: 300;
+      padding: 2vh 0;
+      color: #ffffff;
+    }
+    .navigate2{
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      text-align: center;
+      font-size: 4vw;
+      font-weight: 300;
+      padding: 2vh 43.6vw;
+      color: #ffffff;
+    }
+  
+        .menubox{
+      position:absolute;
+      top: 15vh;
+      left: 40vw;
+      width:8vw;
+      height: 5vh;
+      color: #ffffff;
+      border: 2px solid rgb(255, 255, 255) ;
+      border-radius: 28px;
+    }
+
+    .menubox2{
+      position:absolute;
+      top: 15vh;
+      left: 50vw;
+      width:8vw;
+      height: 5vh;
+      color: #ffffff;
+      border: 2px solid rgb(255, 255, 255) ;
+      border-radius: 28px;
+    }
+    .menubox3{
+
+      position:absolute;
+      top: 15vh;
+      left: 60vw;
+      width:8vw;
+      height: 5vh;
+      color: #ffffff;
+      border: 2px solid rgb(255, 255, 255) ;
+      border-radius: 28px;
+    }
+    .menubox4{
+
+position:absolute;
+top: 15vh;
+left: 30vw;
+width:8vw;
+height: 5vh;
+color: #ffffff;
+border: 2px solid rgb(255, 255, 255) ;
+border-radius: 28px;
+}
+    .topmenu {
+      font-family: Helvetica, sans-serif;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 17vw;
+      height: 100%;
+      font-weight: 100;
+      font-size: 1.8vw;
+      cursor: pointer;
+      color: #ffffff;
+      left: -4.6vw;
+      position: relative;
+      transition: background-color 0.3s;
+      text-decoration: none; 
+      padding-top: 2px;
+
+    }
+
+    .topmenu::after {
+      content: attr(data-ko);
+      position: absolute;
+      color: rgb(255, 255, 255);
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+    }
+
+    .topmenu:hover {
+     color: transparent;
+    }
+
+    .topmenu:hover::after {
+      opacity: 1;
+    }
+    .topmenu-wrapper {
+  position: relative;
+  display: inline-block;
+}
+    .menusub {
+      
+      background-color: rgb(255, 255, 255);
+      display: none;
+      position: absolute;
+      top: 120%;
+      left:0;
+      border: 0.1vw solid rgb(255, 255, 255);
+      border-radius: 28px;
+      flex-direction: column;
+     
+     
+      z-index: 15;
+    }
+    
+    .back-btn {
+      position: absolute;
+      top: 1.7vh;
+      left: 1vw;
+      padding: 1vh 1vw;
+      padding-top: 2vh ;
+      border-bottom: 2vh;
+      font-size: 2vw;
+      text-align: center;
+      border: 1px solid rgb(0, 0, 0);
+      background: rgb(0, 0, 0);
+      color: #ffffff;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 110;
+    }
+    .back-btn:hover {
+      background-color: rgb(255, 255, 255);
+      color: rgb(0, 0, 0);
+    }
+
+    .submenu  {
+      font-family:Arial, Helvetica, sans-serif;
+      font-weight: 100;
+      width: 8vw;
+      height: 3vw;
+      font-size: 1.5vw;
+      display: flex;
+      align-items: center;
+      padding-left: 5px;
+      padding-top: 2px;
+      padding-bottom: 2px;
+      justify-content: center; 
+      padding-top: 10px;
+      transition: background-color 0.3s;
+      color: rgb(0, 0, 0);
+      
+      
+    }
+
+    .submenu:hover {
+      border: 0.1vw solid rgb(0, 0, 0);
+      border-radius: 30px;
+    }
+    a {
+    text-decoration: none;
+    color: inherit;
+    }
+
+    .map{
+        position: absolute;
+        width: 43vw;
+        height: auto;
+    }
+
+    
+
+    .page {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient( to bottom rgba(255,255,0,1), rgba(255,255,255,1), rgba(255,255,0,1) ) ;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+      padding: 5vh 5vw;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+      opacity: 0;
+      pointer-events: none;
+      display: block;
+    }
+
+    .book{
+        position: absolute;
+        top: 70vh;
+        left: 22vw;
+        font-size: 6vw;
+        font-family: 'ddag';
+        background-color: rgb(255, 217, 0);
+        width: 55vw;
+        height: 40vh;
+        border-top: 2vw solid rgb(255, 251, 41) ;
+        padding-left: 4vw;
+        color: #0884bd;
+        padding-top:6vh;
+        z-index: 99;
+    }
+    .book2{
+        position: absolute;
+        top: 47.5vh;
+        left: 22vw;
+        background-color: rgb(255, 251, 41);
+        width: 3vw;
+        height:22.5vh;
+        
+        z-index: 99;
+    }
+    .paper{
+        position: absolute;
+        top: 67.5vh;
+        left: 25vw;
+        background-color: rgb(255, 255, 255);
+        width: 52vw;
+        height: 2.5vh;
+        z-index: 98;
+        border-top: 0.5vh solid black;
+    }
+    .bookmark2{
+        font-family: 'bagle';
+       position: absolute;
+       top: 54vh;
+       left:36vw;
+       width: 15vw;
+       height: 37vh;
+       font-size: 3vw;
+       text-align: center;
+       padding-top: 2vh;
+       background-color: #385447;
+       transition: top 0.5s ease 0.3s;
+       z-index: 97;
+    }
+    .bookmark2:hover{
+        top: 32vh;
+    }
+    .paper2{
+        position: absolute;
+        top: 65vh;
+        left: 25vw;
+        width: 52vw;
+        height: 2.5vh;
+        z-index: 96;
+        background-color: rgb(255, 255, 255);
+        border-top: 0.5vh solid black;
+    }
+    .bookmark3{
+       font-family: 'bagle';
+       position: absolute;
+       top: 49vh;
+       left:60vw;
+       width: 15vw;
+       height: 40vh;
+       font-size:3vw;
+       text-align: center;
+       transition: top 0.5s ease 0.3s;
+       background-color: #9f87a1;
+       z-index: 95;
+
+    }
+    .bookmark3:hover{
+        top: 28vh;
+    }
+    .paper3{
+        position: absolute;
+        top: 62.5vh;
+        left: 25vw;
+        width: 52vw;
+        background-color: rgb(255, 255, 255);
+        height: 2.5vh;
+        z-index: 94;
+        border-top: 0.5vh solid black;
+    }
+    .paper4{
+        position: absolute;
+        top: 60vh;
+        left: 25vw;
+        width: 52vw;
+        background-color: rgb(255, 255, 255);
+        height: 2.5vh;
+        z-index: 93;
+        border-top: 0.5vh solid black;
+    }
+    .paper5{
+        position: absolute;
+        top: 57.5vh;
+        left: 25vw;
+        width: 52vw;
+        background-color: rgb(255, 255, 255);
+        height: 2.5vh;
+        z-index: 93;
+        border-top: 0.5vh solid black;
+    }
+    .bookmark4{
+       font-family: 'bagle';
+       position: absolute;
+       top: 43vh;
+       left:48.5vw;
+       width: 15vw;
+       height: 35vh;
+       font-size: 3vw;
+       text-align: center;
+       padding-top: 2vh;
+       transition: top 0.5s ease 0.3s;
+       background-color: #ec6b2e;
+       z-index: 92;
+    }
+    .bookmark4:hover{
+        top: 27vh;
+    }
+    .paper6{
+        position: absolute;
+        top: 55vh;
+        left: 25vw;
+        width: 52vw;
+        background-color: rgb(255, 255, 255);
+        height: 2.5vh;
+        z-index: 92;
+        border-top: 0.5vh solid black;
+    }
+    .bookmark{
+       font-family: 'bagle';
+       position: absolute;
+       top: 40vh;
+       left:27vw;
+       width: 15vw;
+       height: 30vh;
+       font-size: 3vw;
+       padding-top: 2vh;
+       text-align: center;
+       transition: top 0.7s ease 0.1s;
+       z-index: 91;
+       background-color: #eb6ba4;
+
+    }
+    
+    .bookmark:hover{
+        top: 25vh;
+    }
+    .paper7{
+        position: absolute;
+        top: 52.5vh;
+        left: 25vw;
+        width: 52vw;
+        background-color: rgb(255, 255, 255);
+        height: 2.5vh;
+        z-index: 90;
+        border-top: 0.5vh solid black;
+    }
+    .paper8{
+        position: absolute;
+        top: 50vh;
+        left: 25vw;
+        width: 52vw;
+        background-color: rgb(255, 255, 255);
+        height: 2.5vh;
+        z-index: 90;
+        border-top: 0.5vh solid black;
+    }
+    .paper9{
+        position: absolute;
+        top: 47.5vh;
+        left: 25vw;
+        width: 52vw;
+        background-color: rgb(255, 255, 255);
+        height: 2.5vh;
+        z-index: 90;
+        border-top: 1vw solid rgb(255, 251, 41);
+    }
+
+
+    .page{
+        opacity: 0;
+     pointer-events: none;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  transition: all 0.5s ease;
+  overflow: hidden;
+  transform-origin: top left;
+  overflow-y: auto; 
+    box-sizing: border-box;
+  z-index: 100;
+    }
+    .page.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: none !important;
+  
+}
+
+.content{
+    position: absolute;
+    top: 25vh;
+    left: 10vw;
+    font-family: 'ddag';
+    font-size: 4vh;
+}
+
+.content2{
+    position: absolute;
+    top: 25vh;
+    left: 58vw;
+    font-family: 'ddag';
+    font-size: 4vh;;
+}
+.content3{
+    position: absolute;
+    top: 105vh;
+    left: 10vw;
+    font-family: 'ddag';
+    font-size: 4vh;
+   
+}
+.content4{
+    position: absolute;
+    top: 105vh;
+    left: 58vw;
+    font-family: 'ddag';
+    font-size: 4vh;
+   
+}
+.content5{
+    position: absolute;
+    top: 185vh;
+    left: 10vw;
+    font-family: 'ddag';
+    font-size: 4vh;
+    
+}
+.content6{
+    position: absolute;
+    top: 185vh;
+    left: 58vw;
+    font-family: 'ddag';
+    font-size: 4vh;
+}
+.content7{
+    position: absolute;
+    top: 265vh;
+    left: 10vw;
+    font-family: 'ddag';
+    font-size: 4vh;
+}
+.content8{
+    position: absolute;
+    top: 264vh;
+    left: 58vw;
+    font-family: 'ddag';
+    font-size: 4vh;
+}
+
+  
+.bookname {
+ font-family: 'cafe';
+  font-size: 5vh;
+  color: #000;
+}
+
+.bookbtn {
+  display: inline-block; 
+  position: relative;
+  font-family: 'gmarket';
+  padding: 1.5vh 2vw;
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 2vh;
+  text-decoration: none;
+  font-size: 3vh;
+  transition: background-color 0.3s;
+}
+
+.bookbtn:hover {
+  background-color: #000000;
+  color: #fff;
+}
+</style>
+</head> 
+<body>
+<div class="navigate">Recommend</div>
+
+<div class="menubox">
+    <a href ="About.html" class="topmenu"  data-ko="소개">ABOUT</a>
+    </div>
+    <div class="menubox2">
+    <a href="area.html" class="topmenu" data-ko="지역">AREA</a>
+    </div>
+    <div class="menubox3">
+    <div class="topmenu" onclick="showbox('submenu2')" data-ko="기타">OTHERS</div>
+    <div class="menusub" id="submenu2" style="left: calc(0vw * 2);">
+      <a href ="review.html" class="submenu">후기</a>
+      <a href ="recommend.html" class="submenu">도서 추천</a>
+    </div>
+    </div>
+    <div class="menubox4">
+      <a href ="index.html" class="topmenu"  data-ko="홈">HOME</a>
+      </div>
+ 
+
+      <script>
+        function expandBookmark(el) {
+          const rect = el.getBoundingClientRect();
+          const clone = el.cloneNode(true);
+          document.body.appendChild(clone);
+        
+          clone.style.position = 'fixed';
+          clone.style.top = rect.top + 'px';
+          clone.style.left = rect.left + 'px';
+          clone.style.width = rect.width + 'px';
+          clone.style.height = rect.height + 'px';
+          clone.style.margin = 0;
+          clone.style.zIndex = 10000;
+          clone.style.transition = 'all 0.6s ease-in-out';
+        
+          setTimeout(() => {
+            clone.style.top = 0;
+            clone.style.left = 0;
+            clone.style.width = '100vw';
+            clone.style.height = '100vh';
+            clone.style.borderRadius = '0';
+          }, 10);
+        
+        
+          setTimeout(() => {
+            document.querySelector('.page').style.opacity = 1;
+            document.querySelector('.page').style.pointerEvents = 'auto';
+            document.body.removeChild(clone);
+          }, 700);
+        }
+        </script>
+        
+
+
+
+
+
+ 
+<div class="book">RECOMMEND</div>
+<div class="book2"></div>
+<div class="paper"></div>
+<div class="paper2"></div>
+<div class="paper3"></div>
+<div class="paper4"></div>
+<div class="paper5"></div>
+<div class="paper6"></div>
+<div class="paper7"></div>
+<div class="paper8"></div>
+<div class="paper9"></div>
+<div class="bookmark" onclick="openPageWithAnimation('novel', this)" >Novel <img src="mark-icon.png" style="width: 8vw; height: auto;padding-top: 5vh;"></div>
+<div class="bookmark2" onclick="openPageWithAnimation('Essay', this)">Essay <img src="mark-icon2.png" style="width: 10vw; height: auto; padding-top: 3.9vh; "></div>
+<div class="bookmark3" onclick="openPageWithAnimation('best', this)">Best<p>seller</p><img src="mark-icon4.png" style="width: 13vw; height: auto; padding-top: 2vh; "></div>
+<div class="bookmark4" onclick="openPageWithAnimation('new', this)">New thing <img src="mark-icon3.png" style="width: 15vw; height: auto; padding-top: 3.5vh; "></div>
+
+
+<div id="novel" class="page" style="background-color: #eb6ba4;">
+  <div class="menubox">
+    <a href ="About.html" class="topmenu"  data-ko="소개">ABOUT</a>
+    </div>
+    <div class="menubox2">
+    <a href="area.html" class="topmenu" data-ko="지역">AREA</a>
+    </div>
+    <div class="menubox3">
+    <div class="topmenu" onclick="showbox('submenu_novel')" data-ko="기타">OTHERS</div>
+    <div class="menusub" id="submenu_novel" style="left: calc(0vw * 2);">
+      <a href ="review.html" class="submenu">후기</a>
+      <a href ="recommend.html" class="submenu">도서 추천</a>
+    </div>
+    </div>
+    <div class="menubox4">
+      <a href ="index.html" class="topmenu"  data-ko="홈">HOME</a>
+      </div>
+    <button class="back-btn" onclick="hidePages()">↩</button>
+    <div class="navigate2">NOVEL</div>
+   
+     <div class= content ><img src="mosun.jpg" style="width: 25vw; height: auto; padding-top: 10vh; padding-left: 5vh;">
+      <div class="bookname" style="padding-left: 9vw ; font-size: 2vw;">양귀자-모순</div>
+      <a href="https://product.kyobobook.co.kr/detail/S000001632467" class="bookbtn" style="top: 2vw;  left: 10vw;  ">바로가기</a>
+  </div>
+     <div class= content2 ><img src="boyscome.jpg" style="width: 25vw; height: auto; padding-top: 13vh; padding-left: 10vh;">
+      <div class="bookname" style="padding-left: 8vw; padding-top: 2vw; font-size: 2vw;">한강-소년이 온다</div>
+      <a href="https://product.kyobobook.co.kr/detail/S000000610612" class="bookbtn"  style="top: 2vw;  left: 10vw;   " >바로가기</a></div>
+     <div class= content3 ><img src="honmono.jpg" style="width: 25vw; height: auto; padding-top: 13vh; padding-left: 10vh;">
+      <div class="bookname" style="padding-left: 9vw; padding-top: 2vw;font-size: 2vw;">성해나-혼모노</div>
+      <a href="https://product.kyobobook.co.kr/detail/S000216111714" class="bookbtn"  style="top: 2vw;  left: 10vw; ">바로가기</a></div>
+     <div class= content4 ><img src="pado.jpg" style="width: 25vw; height: auto; padding-top: 13vh; padding-left: 10vh;">
+      <div class="bookname" style="padding-left: 10vw; padding-top: 2vw; font-size: 2vw;">정대건-급류</div>
+      <a href="https://product.kyobobook.co.kr/detail/S000200550189" class="bookbtn"  style="top: 2vw;  left: 10vw;  ">바로가기</a></div>
+     <div class= content5 ><img src="summer.jpg"style="width: 25vw; height: auto; padding-top: 13vh; padding-left: 10vh;" >
+      <div class="bookname" style="padding-left: 6vw; padding-top: 2vw; font-size: 2vw;">김금희-첫 여름, 완주</div>
+      <a href="https://product.kyobobook.co.kr/detail/S000216344843" class="bookbtn"  style="top: 2vw;  left: 10vw; ">바로가기</a></div>
+     <div class= content6 ><img src="stoner.jpg" style="width: 25vw; height: auto; padding-top: 13vh; padding-left: 10vh;">
+      <div class="bookname" style="padding-left: 6vw; padding-top: 2vw; font-size: 2vw;">존 윌리엄스-스토너</div>
+      <a href="https://product.kyobobook.co.kr/detail/S000000478177" class="bookbtn"  style="top: 2vw;  left: 10vw; ">바로가기</a></div>
+     <div class= content7 ><img src="vegan.jpg" style="width: 25vw; height: auto; padding-top: 13vh; padding-left: 10vh;">
+      <div class="bookname" style="padding-left: 7vw; padding-top: 2vw; font-size: 2vw;">한강-채식주의자</div>
+      <a href="https://product.kyobobook.co.kr/detail/S000000610650" class="bookbtn"  style="top: 2vw;  left: 10vw; ">바로가기</a></div>
+     <div class= content8 ><img src="dinner.jpg" style="width: 25vw; height: auto; padding-top: 13vh; padding-left: 10vh;">
+      <div class="bookname" style="padding-left: 3vw; padding-top: 2vw; font-size: 2vw;">한강-서랍에 저녁을 넣어두었다</div>
+      <a href="https://product.kyobobook.co.kr/detail/S000000569962" class="bookbtn"  style="top: 2vw;  left: 10vw;  ">바로가기</a></div>
+   
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+
+  <div id="Essay" class="page" style="background-color: #385447;" >
+    <button class="back-btn" onclick="hidePages()">↩</button>
+    <div class="navigate2">ESSAY</div>
+    <div class="menubox">
+      <a href ="About.html" class="topmenu"  data-ko="소개">ABOUT</a>
+      </div>
+      <div class="menubox2">
+      <a href="area.html" class="topmenu" data-ko="지역">AREA</a>
+      </div>
+      <div class="menubox3">
+      <div class="topmenu" onclick="showbox('submenu_essay')" data-ko="기타">OTHERS</div>
+      <div class="menusub" id="submenu_essay" style="left: calc(0vw * 2);">
+        <a href ="review.html" class="submenu">후기</a>
+        <a href ="recommend.html" class="submenu">도서 추천</a>
+      </div>
+      </div>
+      <div class="menubox4">
+        <a href ="index.html" class="topmenu"  data-ko="홈">HOME</a>
+        </div>
+    <div class= content ><img src="mouse.jpg" style="width: 25vw; height: auto; padding-top: 13vh; padding-left: 10vh;">
+      <div class="bookname" style="padding-left: 4vw; text-align: center; font-size: 1.5vw;">미키마우스 원작-<br>미키마우스,<br> 오늘부터 멋진 인생이 시작될 거야</div>
+      <a href="https://product.kyobobook.co.kr/detail/S000000478895" class="bookbtn" style="top: 2vw;  left: 10vw;" >바로가기</a>
+  </div>
+     <div class= content2 ><img src="life.jpg" style="width: 25vw; height: auto; padding-top: 13vh; padding-left: 13vh;">
+      <div class="bookname" style="padding-left: 7vw; padding-top: 2vw; font-size: 2vw;">김영하-단 한 번의 삶</div>
+      <a href="https://product.kyobobook.co.kr/detail/S000216122857" class="bookbtn"  style="top: 2vw;  left: 12vw;" >바로가기</a></div>
+     <div class= content3 ><img src="happy.jpg" style="width: 25vw; height: auto; padding-top: 13vh; padding-left: 13vh;">
+      <div class="bookname" style="padding-left: 6vw; padding-top: 2vw; font-size: 2vw;">우애령-행복한 철학자</div>
+      <a href="https://product.kyobobook.co.kr/detail/S000001442389" class="bookbtn"  style="top: 2vw;  left: 10vw;" >바로가기</a></div>
+     <div class= content4 ><img src="light.jpg" style="width: 23vw; height: auto; padding-top: 13vh; padding-left: 13vh;">
+      <div class="bookname" style="padding-left: 9vw; padding-top: 2vw; font-size: 2vw;" >한강-빛과 실</div>
+      <a href="https://product.kyobobook.co.kr/detail/S000216361656" class="bookbtn"  style="top: 2vw;  left: 10vw;" >바로가기</a></div>
+     <div class= content5 ><img src="money.jpg"style="width: 25vw; height: auto; padding-top: 13vh; padding-left: 13vh;" >
+      <div class="bookname" style="padding-left: 4.5vw; padding-top: 1.6vw; text-align: center; font-size: 2vw;">주언규-<br>혹시 돈 얘기해도 될까요?</div>
+      <a href="https://product.kyobobook.co.kr/detail/S000216663122" class="bookbtn" style="top: 2vw;  left: 10vw;" >바로가기</a></div>
+     <div class= content6 ><img src="silent.jpg" style="width: 25vw; height: auto; padding-top: 13vh; padding-left: 13vh;">
+      <div class="bookname" style="padding-left: 6vw; padding-top: 1.5vw; font-size: 2vw; text-align: center;">태수-<br>어른들의 행복은 조용하다</div>
+      <a href="https://product.kyobobook.co.kr/detail/S000214453032" class="bookbtn"  style="top: 2vw;  left: 12vw;" >바로가기</a></div>
+     <div class= content7 ><img src="talk.jpg" style="width: 25vw; height: auto; padding-top: 14vh; padding-left: 13vh;">
+      <div class="bookname" style="padding-left: 7vw; padding-top: 1vw; font-size: 2vw;">황석희-오역하는 말들</div>
+      <a href="https://product.kyobobook.co.kr/detail/S000216507425" class="bookbtn"  style="top: 2vw;  left: 10vw;" >바로가기</a></div>
+     <div class= content8 ><img src="seosons.jpg" style="width: 25vw; height: auto; padding-top: 14vh; padding-left: 13vh;">
+      <div class="bookname" style="padding-left: 6vw; padding-top: 1vw; font-size: 2vw; text-align: center;">김선지-제철행복</div>
+      <a href="https://product.kyobobook.co.kr/detail/S000213077352" class="bookbtn"  style="top: 2vw;  left: 12vw;" >바로가기</a></div>
+     
+  </div>
+  </div>
+  </div>
+    
+  </div>
+  
+
+  <div id="best" class="page" style="background-color:#9f87a1;" >
+    <button class="back-btn" onclick="hidePages()">↩</button>
+    <div class="navigate2">Bestseller</div>
+    <div class="menubox">
+      <a href ="About.html" class="topmenu"  data-ko="소개">ABOUT</a>
+      </div>
+      <div class="menubox2">
+      <a href="area.html" class="topmenu" data-ko="지역">AREA</a>
+      </div>
+      <div class="menubox3">
+      <div class="topmenu" onclick="showbox('submenu_best')" data-ko="기타">OTHERS</div>
+      <div class="menusub" id="submenu_best" style="left: calc(0vw * 2);">
+        <a href ="review.html" class="submenu">후기</a>
+        <a href ="recommend.html" class="submenu">도서 추천</a>
+      </div>
+      </div>
+      <div class="menubox4">
+        <a href ="index.html" class="topmenu"  data-ko="홈">HOME</a>
+        </div>
+    
+    <div class= content ><img src="usimin.jpg" style="width: 25vw; height: auto; padding-top: 10vh; padding-left: 5vh;">
+      <div class="bookname" style="padding-left:5vw; font-size: 2vw;">유시민-청춘의 독서</div>
+      <a href="https://product.kyobobook.co.kr/detail/S000216354970" class="bookbtn" style= "top: 2vw;  left: 8vw;">바로가기</a>
+  </div>
+     <div class= content2 ><img src="honmono.jpg" style="width: 25vw; height: auto; padding-top: 13vh; padding-left: 10vh;">
+      <div class="bookname" style="padding-left:9vw; font-size: 2vw;">성해나-혼모노</div>
+      <a href="https://product.kyobobook.co.kr/detail/S000216111714" class="bookbtn" style= "top: 2vw;  left: 10vw;">바로가기</a></div>
+     <div class= content3 ><img src="nakwon.jpg" style="width: 25vw; height: auto; padding-top: 13vh; padding-left: 10vh;">
+      <div class="bookname" style="padding-left:5vw; font-size: 2vw; text-align: center;">하태완-<br>우리의 낙원에서 만나자</div>
+      <a href="https://product.kyobobook.co.kr/detail/S000216465298" class="bookbtn" style= "top: 2vw;  left: 10vw;">바로가기</a></div>
+     <div class= content4 ><img src="life.jpg" style="width: 25vw; height: auto; padding-top: 13vh; padding-left: 10vh;">
+      <div class="bookname" style="padding-left:6vw; font-size: 2vw;">김영하-단 한 번의 삶</div>
+      <a href="https://product.kyobobook.co.kr/detail/S000216122857" class="bookbtn" style= "top: 2vw;  left: 10vw;">바로가기</a></div>
+     <div class= content5 ><img src="mosun.jpg"style="width: 25vw; height: auto; padding-top: 13vh; padding-left: 10vh;" >
+      <div class="bookname" style="padding-left:10vw; font-size: 2vw;">양귀자-모순</div>
+      <a href="https://product.kyobobook.co.kr/detail/S000001632467" class="bookbtn" style= "top: 2vw;  left: 10vw;">바로가기</a></div>
+     <div class= content6 ><img src="dream.jpg" style="width: 25vw; height: auto; padding-top: 13vh; padding-left: 10vh;">
+      <div class="bookname" style="padding-left:6vw; font-size: 2vw;">사이먼-왓츠유어드림</div>
+      <a href="https://product.kyobobook.co.kr/detail/S000216646920" class="bookbtn" style= "top: 2vw;  left: 10vw;">바로가기</a></div>
+     <div class= content7 ><img src="boyscome.jpg" style="width: 25vw; height: auto; padding-top: 13vh; padding-left: 10vh;">
+      <div class="bookname" style="padding-left:8vw; font-size: 2vw;">한강-소년이 온다</div>
+      <a href="https://product.kyobobook.co.kr/detail/S000000610612" class="bookbtn" style= "top: 2vw;  left: 10vw;">바로가기</a></div>
+      <div class= content8 ><img src="money.jpg" style="width: 25vw; height: auto; padding-top: 13vh; padding-left: 10vh;">
+        <div class="bookname" style="padding-left:5vw; font-size: 2vw; text-align: center;">주언규-<br>혹시 돈 얘기해도 될까요?</div>
+        <a href="https://product.kyobobook.co.kr/detail/S000216663122" class="bookbtn" style= "top: 1.5vw;  left: 11vw;">바로가기</a></div>
+    
+  </div>
+  </div>
+  </div>
+  </div>
+    
+  </div>
+  
+
+  <div id="new" class="page" style="background-color:#ec6b2e;" >
+    <button class="back-btn" onclick="hidePages()">↩</button>
+    <div class="navigate2">Newthing</div>
+    <div class="menubox">
+      <a href ="About.html" class="topmenu"  data-ko="소개">ABOUT</a>
+      </div>
+      <div class="menubox2">
+      <a href="area.html" class="topmenu" data-ko="지역">AREA</a>
+      </div>
+      <div class="menubox3">
+      <div class="topmenu" onclick="showbox('submenu_new')" data-ko="기타">OTHERS</div>
+      <div class="menusub" id="submenu_new" style="left: calc(0vw * 2);">
+        <a href ="review.html" class="submenu">후기</a>
+        <a href ="recommend.html" class="submenu">도서 추천</a>
+      </div>
+      </div>
+      <div class="menubox4">
+        <a href ="index.html" class="topmenu"  data-ko="홈">HOME</a>
+        </div>
+    <div class= content ><img src="bye.jpg" style="width: 25vw; height: auto; padding-top: 13vh; padding-left: 10vh;">
+      <div class="bookname" style="padding-left: 5vw; padding-top: 2vw;   font-size: 2vw;" >박준-마중도 배웅도 없이</div>
+      <a href="https://product.kyobobook.co.kr/detail/S000216225938" class="bookbtn" style= "top: 2vw;  left: 10vw;">바로가기</a>
+  </div>
+     <div class= content2 ><img src="hangout.jpg" style="width: 25vw; height: auto; padding-top: 13vh; padding-left: 10vh;">
+      <div class="bookname" style="padding-left: 4vw; padding-top: 2vw;  font-size: 2vw;">고선경-내 꿈에 가끔만 놀러와</div>
+      <a href="https://product.kyobobook.co.kr/detail/S000216446947" class="bookbtn" style= "top: 2vw;  left: 10vw;">바로가기</a></div>
+     <div class= content3 ><img src="korean.jpg" style="width: 25vw; height: auto; padding-top: 13vh; padding-left: 10vh;">
+      <div class="bookname" style="padding-left: 10vw; padding-top: 2vw; font-size: 2vw;">자음과 모음</div>
+      <a href="https://product.kyobobook.co.kr/detail/S000216796416" class="bookbtn" style= "top: 2vw;  left: 10vw;">바로가기</a></div>
+     <div class= content4 ><img src="no.jpg" style="width: 25vw; height: auto; padding-top: 13vh; padding-left: 10vh;">
+      <div class="bookname" style="padding-left: 4vw; padding-top: 2vw; font-size: 2vw;">공감-그래도 되는 차별은 없다</div>
+      <a href="https://product.kyobobook.co.kr/detail/S000216648072" class="bookbtn" style= "top: 2vw;  left: 10vw;">바로가기</a></div>
+     <div class= content5 ><img src="again.jpg"style="width: 25vw; height: auto; padding-top: 13vh; padding-left: 10vh;" >
+      <div class="bookname" style="padding-left: 6vw; padding-top: 2vw; font-size: 2vw;">다시 만난 민주주의</div>
+      <a href="mosun-detail.html" class="bookbtn" style= "top: 2vw;  left: 10vw;" >바로가기</a></div>
+     <div class= content6 ><img src="celeb.jpg" style="width: 25vw; height: auto; padding-top: 13vh; padding-left: 10vh;">
+      <div class="bookname" style="padding-left: 8vw; padding-top: 2vw; font-size: 2vw;">셀럽병사의 비밀</div>
+      <a href="https://product.kyobobook.co.kr/detail/S000216702890" class="bookbtn"style= "top: 2vw;  left: 10vw;" >바로가기</a></div>
+     
+  </div>
+  </div>
+  </div>
+  </div>
+   
+  </div>
+  
+<script>
+    function showbox(dpname) {
+      const all = document.querySelectorAll(".menusub");
+      all.forEach(m => {
+        if (m.id !== dpname) m.style.display = "none";
+      });
+
+      const box = document.getElementById(dpname);
+      box.style.display = (box.style.display === "block") ? "none" : "block";
+    }
+  </script>
+
+<script>
+    function openPage(pageId) {
+      
+      const pages = document.querySelectorAll('.page');
+      pages.forEach(page => {
+        page.style.opacity = '0';
+        page.style.pointerEvents = 'none';
+      });
+  
+   
+      const targetPage = document.getElementById(pageId);
+      if (targetPage) {
+        targetPage.style.opacity = '1';
+        targetPage.style.pointerEvents = 'auto';
+      }
+    }
+  
+    function hidePages() {
+      const pages = document.querySelectorAll('.page');
+      pages.forEach(page => {
+        page.style.opacity = '0';
+        page.style.pointerEvents = 'none';
+      });
+    }
+  </script>
+  
+
+
+<script>
+  function showPage(pageId) {
+   
+    const bodyChildren = document.body.children;
+    for (let i = 0; i < bodyChildren.length; i++) {
+      const el = bodyChildren[i];
+      if (!el.classList.contains('page')) {
+        el.style.display = 'none';
+      }
+    }
+
+    
+    const page = document.getElementById(pageId);
+    if (page) {
+      page.style.opacity = '1';
+      page.style.pointerEvents = 'auto';
+    }
+  }
+</script>
+
+<script>
+  function hidePages() {
+ 
+    const pages = document.querySelectorAll(".page");
+    pages.forEach(p => {
+      p.style.opacity = '0';
+      p.style.pointerEvents = 'none';
+    });
+
+   
+    const bodyChildren = document.body.children;
+    for (let i = 0; i < bodyChildren.length; i++) {
+      const el = bodyChildren[i];
+      if (!el.classList.contains('page')) {
+        el.style.display = '';
+      }
+    }
+  }
+</script>
+
+
+
+</style>
+
+
+
+
+<script>
+  function openPageWithAnimation(pageId, bookmarkElem) {
+    const page = document.getElementById(pageId);
+    const rect = bookmarkElem.getBoundingClientRect();
+
+  
+    const scaleX = rect.width / window.innerWidth;
+    const scaleY = rect.height / window.innerHeight;
+    const translateX = rect.left;
+    const translateY = rect.top;
+
+    page.style.transition = 'none'; 
+    page.style.transformOrigin = 'top left';
+    page.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scaleX}, ${scaleY})`;
+    page.style.opacity = '1';
+    page.style.pointerEvents = 'auto';
+
+   
+    page.offsetHeight;
+
+   
+    page.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
+    page.style.transform = 'translate(0, 0) scale(1, 1)';
+  }
+
+  function hidePages() {
+    const pages = document.querySelectorAll('.page');
+    pages.forEach(page => {
+      page.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
+      page.style.transform = 'translate(0, 0) scale(0)';
+      page.style.opacity = '0';
+      page.style.pointerEvents = 'none';
+    });
+  }
+</script>
+
+<script>
+  function showbox(id) {
+    var menu = document.getElementById(id);
+    if (!menu) return;
+    if (menu.style.display === "block") {
+      menu.style.display = "none";
+    } else {
+     
+      document.querySelectorAll('.menusub').forEach(function(sub) {
+        sub.style.display = 'none';
+      });
+      menu.style.display = "block";
+    }
+  }
+  </script>
+  
+
+</body>
+</html>
